@@ -12,7 +12,7 @@ std::vector<int> MergeSort::getSortedData() {
   return this->sorted_data;
 }
 
-std::vector<int> MergeSort::sort(std::vector<int>& data) {
+std::vector<int> MergeSort::runSort(std::vector<int>& data) {
   if(data.size() == 1) {
     return data;
   }
@@ -22,8 +22,8 @@ std::vector<int> MergeSort::sort(std::vector<int>& data) {
   vector<int> left(data.begin(), middle);
   vector<int> right(middle, data.end());
 
-  left = sort(left);
-  right = sort(right);
+  left = runSort(left);
+  right = runSort(right);
 
   return merge(left, right);
 }
@@ -56,6 +56,6 @@ std::vector<int> MergeSort::merge(const std::vector<int>& left, const std::vecto
   return result;
 }
 
-void MergeSort::runSort() {
-  this->sorted_data = sort(this->original_data);
+void MergeSort::sort() {
+  this->sorted_data = runSort(this->original_data);
 }

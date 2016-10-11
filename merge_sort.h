@@ -19,9 +19,9 @@ class MergeSort{
     MergeSort(std::vector<int> data);
     std::vector<int> getOriginalData();
     std::vector<int> getSortedData();
-    std::vector<int> sort(std::vector<int>& data);
+    std::vector<int> runSort(std::vector<int>& data);
     std::vector<int> merge(const std::vector<int>& left, const std::vector<int>& right);
-    void runSort();
+    void sort();
 };
 
 #endif
